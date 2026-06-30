@@ -1,20 +1,14 @@
-# USER.md - About Your Human
+# USER.md - Ociel
 
-_Learn about the person you're helping. Update this as you go._
-
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Nombre:** Ociel
+- **Qué le llamo:** Ociel
+- **Pronombres:** _(preguntar)_
+- **Zona horaria:** Europe/Madrid (CEST, UTC+2)
+- **Notas:** Estudiante de Ingeniería en Inteligencia Artificial. Valencia, España. Primer agente que usa. Le gusta el estilo científico con chispa.
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
-
----
-
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+Está estudiando IA. Probablemente tendré que ayudarle con código, conceptos, proyectos, debugging, y todo lo que conlleva la carrera. Primer contacto con asistentes autónomos como yo.
 
 ## Related
 
