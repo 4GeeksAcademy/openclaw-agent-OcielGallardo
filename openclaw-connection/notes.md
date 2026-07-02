@@ -10,7 +10,7 @@
 ---
 
 ## Dificultades que encontré durante el módulo 😫
-- La primera llamada a Google Calendar no tenía los permisos suficiente, por lo que la llamada falló y el bot me dio el aviso correcto:
+- La primera llamada a Google Calendar no tenía los permisos suficientes, por lo que la llamada falló y el bot me dio el aviso correcto:
   Ociel, hay un pequeño problema 🩺 La conexión de Google Calendar está activa, pero en modo solo lectura — los permisos que se autorizaron inicialmente no incluyen crear/modificar eventos.
   Necesito que re-autentiques la conexión con los scopes de escritura.Tienes que abrir este enlace (válido por 10 min) y autorizar los permisos de escritura en el calendario:🔗 Reconectar Google Calendar con permisos de escritura (https://connect.composio.dev/link/lk_nVEsGtH5fh_o)
   Una vez lo hagas, dime y creo el evento al instante. ⏱️
@@ -19,5 +19,5 @@
 ---
  
 ### Pruebas fuera de contenido que quiero realizar 🎯
-- ⌛Hablarle al bot (lecturas de audio)
-- ✅Pedirle que me cuente algun chiste (es muy malo contando chistes 😂) 
+- ✅Hablarle al bot (lecturas de audio) -> se necesita un transcriptor de audio.
+- ✅Pedirle que me cuente algún chiste (es muy malo contando chistes 😂) 
