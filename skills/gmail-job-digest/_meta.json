@@ -1,0 +1,11 @@
+{
+  "slug": "gmail-job-digest",
+  "version": "1.0.0",
+  "description": "Consult Gmail via Composio MCP, identify job-related emails, summarize, and deliver via telegram-messaging.",
+  "dependencies": {
+    "skills": ["telegram-messaging"],
+    "mcp": ["composio"],
+    "connections": ["gmail", "telegram"]
+  },
+  "user-invocable": true
+}
