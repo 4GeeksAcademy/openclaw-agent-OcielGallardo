@@ -1,44 +1,84 @@
-# TOOLS.md - Local Notes
+# TOOLS.md — Chuleta de José 🩺
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
-
-## What Goes Here
-
-Things like:
-
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
-
-## Examples
-
-```markdown
-### Cameras
-
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+Skills definen _cómo_ funcionan las herramientas. Este archivo guarda lo _específico de mi setup_ con Ociel.
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## MCP / Composio
 
-## Related
+- **Server:** `composio` vía mcporter (`mcporter list composio`)
+- **Transport:** HTTP → `https://connect.composio.dev/mcp`
+- **Meta tools (7):**
 
-- [Agent workspace](/concepts/agent-workspace)
+| Tool | Qué hace |
+|------|----------|
+| `COMPOSIO_SEARCH_TOOLS` | Descubre tools disponibles por use case. **Siempre llamar primero** cuando se menciona una app externa. |
+| `COMPOSIO_GET_TOOL_SCHEMAS` | Obtiene el schema completo de uno o varios tool slugs. |
+| `COMPOSIO_MANAGE_CONNECTIONS` | Gestiona conexiones (add / list / rename / remove). |
+| `COMPOSIO_WAIT_FOR_CONNECTIONS` | Espera a que el usuario complete el auth de una conexión. |
+| `COMPOSIO_MULTI_EXECUTE_TOOL` | Ejecuta hasta 50 tools en paralelo. El core para hacer cosas. |
+| `COMPOSIO_REMOTE_BASH_TOOL` | Bash remoto en sandbox (límite 3 min). |
+| `COMPOSIO_REMOTE_WORKBENCH` | Jupyter notebook remoto para procesar datos grandes o scripting. |
+
+### Apps conectadas en Composio
+
+#### ✅ Ya usadas
+
+- **Gmail** — `GMAIL_SEND_EMAIL`, `GMAIL_FETCH_EMAILS`, `GMAIL_REPLY_TO_THREAD`, etc.
+  - Los mensajes devuelven estructura plana (`data.messages[]`), no anidada.
+  - Tema de búsqueda: etiquetas, queries tipo Gmail.
+- **Google Calendar** — `GOOGLECALENDAR_CREATE_EVENT`, `GOOGLECALENDAR_LIST_EVENTS`, `GOOGLECALENDAR_FIND_EVENT`, `GOOGLECALENDAR_UPDATE_EVENT`, `GOOGLECALENDAR_DELETE_EVENT`.
+
+#### 🔌 Conectadas — aún no utilizadas
+
+| App | Estado |
+|-----|--------|
+| **GitHub** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **Notion** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **Google Sheets** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **Google Docs** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **Linear** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **Figma** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+| **LinkedIn** | 🔌 Conectada — explorar tool slugs cuando se necesite |
+
+> Para explorar tool slugs de cualquiera: `mcporter call composio.COMPOSIO_SEARCH_TOOLS` o via `COMPOSIO_MULTI_EXECUTE_TOOL`.
+
+---
+
+## Skills instaladas
+
+| Skill | Path | Para qué |
+|-------|------|----------|
+| `telegram-messaging` | `~/.openclaw/workspace/skills/telegram-messaging/SKILL.md` | Enviar mensajes a Telegram, responder en grupos, notificaciones |
+| `telegram-status-updates` | `~/.openclaw/workspace/skills/telegram-status-updates/SKILL.md` | Status updates durante ejecución de tareas |
+| `gmail-job-digest` | `~/.openclaw/workspace/skills/gmail-job-digest/SKILL.md` | Resumir correos de empleo desde Gmail |
+
+---
+
+## Telegram
+
+- **Chat ID:** `8918853615` (directo)
+- **Sender autorizado:** `8918853615`
+- **Channel:** `telegram`
+- **Account:** `default`
+- **Rich messages:** ❌ Deshabilitados para este bot/cuenta
+- **Formato:** HTML estándar de Telegram (negritas, enlaces, etc.)
+
+---
+
+## Ociel (el humano)
+
+- **Nombre:** Ociel Gallardo
+- **Rol:** Estudiante de Ingeniería en Inteligencia Artificial (Valencia, España)
+- **Zona horaria:** `Europe/Madrid` (CEST, UTC+2)
+- **Pronombres:** preguntar
+- **Email:** ocielgallardo@gmail.com
+- **Username TG:** `@GallaTel`
+
+---
+
+## Notas varias
+
+- **mcporter skill:** `/usr/lib/node_modules/openclaw/skills/mcporter/SKILL.md`
+- Cuando se usa Composio, seguir flujo: `COMPOSIO_SEARCH_TOOLS` → revisar plan → `COMPOSIO_GET_TOOL_SCHEMAS` si es necesario → `COMPOSIO_MULTI_EXECUTE_TOOL` (paralelizar tools independientes).
+- El archivo `TOOLS.md` se puede perder en reinicios (se almacena en el workspace, que puede resetearse). Si falta, reconstruir con `mcporter list composio --schema --json` para pillar las meta tools.
