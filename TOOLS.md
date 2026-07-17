@@ -77,6 +77,20 @@ Skills definen _cómo_ funcionan las herramientas. Este archivo guarda lo _espec
 
 ---
 
+## 🌐 Convención @App (Composio + mcporter)
+
+Cuando Ociel escriba `@NombreApp` en un mensaje (ej. `@Linear`, `@Gmail`, `@GitHub`, `@Notion`, `@GoogleCalendar`, `@GoogleSheets`, `@GoogleDocs`, `@Figma`, `@LinkedIn`, etc.), es una señal de que debo:
+
+1. **Usar mcporter** → buscar la meta-tool de Composio correspondiente a esa app.
+2. **Ejecutar** lo que pida con ella.
+
+**Flujo automático:**
+- Si la app ya está en la tabla de "Apps conectadas" arriba, buscar directamente con `COMPOSIO_SEARCH_TOOLS` los tool slugs si no los tengo memorizados.
+- Si no está conectada, avisar antes de seguir.
+- Si no especifica tool, preguntar o inferir por contexto.
+
+---
+
 ## Notas varias
 
 - **mcporter skill:** `/usr/lib/node_modules/openclaw/skills/mcporter/SKILL.md`
