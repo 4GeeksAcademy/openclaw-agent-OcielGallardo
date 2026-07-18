@@ -137,3 +137,47 @@ Habilitar a José para conectarse al API de 4Geeks Academy, consultar progreso d
 - [ ] Probar `assignment/me` y `task/me` en detalle (pendiente de verificar si devuelven datos vacíos o necesitan filtro)
 - [ ] Implementar helpers: `get_profile()`, `get_assignments()`, `get_tasks()`, `get_certificates()`
 - [ ] Añadir comando `@4geeks` para interacción rápida
+
+---
+
+## ✅ Implementación realizada (2026-07-18)
+
+### Contexto operativo
+
+Solicité que esta implementación en GitHub Copilot porque el LLM operativo de su agente OpenClaw estaba respondiendo con `TIMEOUT` de forma recurrente durante la construcción de skills.
+
+### Skills creadas en este workspace
+
+Se implementaron 4 skills nuevas en la carpeta `skills/` para mejorar precisión de mapeo/scraping en 4Geeks:
+
+1. `skills/4geeks-obtener-proyectos/SKILL.md`
+	- Recupera proyectos asignados
+	- Normaliza estado a: `pendiente`, `entregado`, `calificado`
+	- Incluye reglas de fallback de endpoints y heurísticas para detectar proyectos
+
+2. `skills/4geeks-obtener-trabajo-independiente/SKILL.md`
+	- Lista trabajo independiente del estudiante
+	- Ordena por urgencia/prioridad
+	- Entrega resumen accionable por actividad
+
+3. `skills/4geeks-obtener-faltantes/SKILL.md`
+	- Calcula qué falta por completar
+	- Genera checklist por prioridad (`critico`, `alto`, `medio`, `bajo`)
+	- Cruza assignments, tasks y assessments
+
+4. `skills/4geeks-resumen-progreso/SKILL.md`
+	- Consolida visión global de avance
+	- Calcula KPIs y avance porcentual (o estimado con cobertura de datos)
+	- Sugiere próximos 3 pasos priorizados
+
+### Nota de integración
+
+Estas skills asumen que la skill de autenticación de 4Geeks ya existente en OpenClaw resuelve token y headers (`Authorization: Token ...`) antes de consultar endpoints.
+
+### Estado
+
+- [x] Skill de proyectos creada
+- [x] Skill de trabajo independiente creada
+- [x] Skill de faltantes creada
+- [x] Skill de resumen de progreso creada
+- [x] Documentación actualizada en `SKILLS_LOG.md`
