@@ -181,3 +181,22 @@ Estas skills asumen que la skill de autenticación de 4Geeks ya existente en Ope
 - [x] Skill de faltantes creada
 - [x] Skill de resumen de progreso creada
 - [x] Documentación actualizada en `SKILLS_LOG.md`
+
+### Prompts de Ociel usados para esta iteración
+
+Para dejar trazabilidad del proceso, estos fueron los prompts directos que guiaron la siguiente fase:
+
+1. Contexto quiero que mi agente opneclaw pueda conectarse a la plataforma de la academia para verificar mi progreso en mis clases. especificamente en mi proyecto. quiero crear 4 SKILL que hagan que mi agente sea mas preciso a la hora de mapear o scrapear la plataforma 4GEEKS.
+ya existe la habilidad de autenticarse en .openclaw/workspace/skills/ las siguientes serian:
+- Optener mis proyectos: oponclaw debe ser capaz de recuperar la lista de proyectos asignados con su estado (pendiente, entregado, calificado).
+- Obtener trabajo independiente: Openclaw debe poder decirme qu ee falta por completar
+4 Obtener resumen de progreso: Openclaw debe poder darme una vision general de cuanto has avanzado en el curso.
+Por ultimo documenta todo en SKILL_LOG.md. y explica que te use como agente de implementacion porque el LLM de mi agente me responde todo el tiempo TIMEOUT
+2. "que otras skill me podrian ayudar con 4GEEKS? Que me recomiendas"
+3. "ok en mi academia son bastantes flexibles y nunca han hablado de deadlines aprate yo estoy bastante al dia entonces crea 2 y 3"
+
+### Resultado derivado de esos prompts
+
+- Se omitio la skill de alertas de deadlines por bajo valor en tu contexto academico actual.
+- Se creo `skills/4geeks-plan-semanal/SKILL.md` para organizacion semanal y consistencia.
+- Se creo `skills/4geeks-seguimiento-assessments/SKILL.md` para priorizar quizzes y repaso estrategico.
