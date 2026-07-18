@@ -61,7 +61,7 @@ Además, pidió documentar todo el proceso en este archivo.
 ### Token usado
 
 ```
-1ba49d1c3a49f46f047ef25aade2b742d5cfb12f
+4GEEKS_TOKEN
 ```
 
 **Formato de autenticación:** `Authorization: Token <token>`
